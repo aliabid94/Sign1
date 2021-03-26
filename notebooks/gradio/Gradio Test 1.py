@@ -6,6 +6,7 @@ warnings.filterwarnings('ignore')  # or 'once'
 
 import pyforest
 import gradio as gr
+import os
 
 from datetime import datetime
 from fastbook import *
@@ -379,6 +380,8 @@ def get_valid_aug(RESOLUTION=380):
 
 
 RUN_NAME = '20210323-1337 - arch=tf_efficientnet_b4_ns - samples=7500 frozen=1 epochs=10 bs=48 res=380 _data=combined4_with_overflow_all_d' 
+dir = os.path.dir_name(__file__)
+RUN_NAME = os.path.join(dir, RUN_NAME)
 
 #'20210303-1849 - arch=tf_efficientnet_b4_ns - samples=1100 frozen=1 epochs=15 bs=48 res=380 _data=combined2'
 
